@@ -21,41 +21,23 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="row pb-3">
-                        @foreach (['blog-1.jpg', 'blog-2.jpg', 'blog-3.jpg', 'blog-1.jpg', 'blog-2.jpg', 'blog-3.jpg'] as $index => $blogImage)
-                            <div class="col-lg-6 mb-4" data-aos="zoom-in" data-aos-duration="1000"
-                                data-aos-delay="{{ $index * 100 }}">
+                        @foreach($blogs as $blog)
+
+
+                            <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
                                 <div class="blog-item position-relative overflow-hidden rounded mb-2">
-                                    <img class="img-fluid" src="{{ asset('asset/img/' . $blogImage) }}" alt="">
+                                    <img class="img-fluid" src="{{ asset('storage/'.$blog->image) }}" alt="">
                                     <a class="blog-overlay text-decoration-none" href="">
-                                        <h5 class="text-white mb-3">Lorem elitr magna stet eirmod labore amet labore clita
-                                            at ut clita</h5>
-                                        <p class="text-primary m-0">Jan 01, 2050</p>
+                                        <h5 class="text-white mb-3">
+                                            {{$blog->short_description}}
+                                        </h5>
+                                        <p class="text-primary m-0">{{ \Carbon\Carbon::parse($blog->created_at)->format('F d, Y') }}</p>
+
                                     </a>
                                 </div>
                             </div>
+
                         @endforeach
-                        <div class="col-12">
-                            <nav aria-label="Page navigation">
-                                <ul class="pagination pagination-lg justify-content-center mb-0" data-aos="fade-up"
-                                    data-aos-duration="1000">
-                                    <li class="page-item disabled">
-                                        <a class="page-link" href="#" aria-label="Previous">
-                                            <span aria-hidden="true">&laquo;</span>
-                                            <span class="sr-only">Previous</span>
-                                        </a>
-                                    </li>
-                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#" aria-label="Next">
-                                            <span aria-hidden="true">&raquo;</span>
-                                            <span class="sr-only">Next</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
                     </div>
                 </div>
 

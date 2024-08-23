@@ -15,17 +15,26 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('frontend.index');
+        $banners=Banner::all();
+        $abouts=About::all();
+        $services=Service::all();
+        $teams =Team::all() ;
+        $testimonials=Testimonial::all();
+        $blogs=Blog::all();
+        return view('frontend.index',compact('banners','abouts','services','teams','testimonials','blogs'));
     }
 
     public function about()
     {
-        return view('frontend.about');
+        $abouts=About::all();
+        $testimonials=Testimonial::all();
+        return view('frontend.about',compact('testimonials','abouts'));
     }
 
     public function blog()
     {
-        return view('frontend.blog');
+        $blogs=Blog::all();
+        return view('frontend.blog',compact('blogs'));
     }
 
     public function contact()
@@ -35,7 +44,8 @@ class HomeController extends Controller
 
     public function course()
     {
-        return view('frontend.course');
+        $services=Service::all();
+        return view('frontend.course',compact('services'));
     }
 
     public function single()
@@ -45,7 +55,8 @@ class HomeController extends Controller
 
     public function teacher()
     {
-        return view('frontend.teacher');
+        $teams =Team::all() ;
+        return view('frontend.teacher',compact('teams'));
     }
 
     public function coursesdetails()

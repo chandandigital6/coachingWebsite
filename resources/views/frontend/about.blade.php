@@ -6,7 +6,7 @@
             <div class="d-flex flex-column justify-content-center" style="min-height: 300px">
                 <h3 class="display-4 text-white text-uppercase">About</h3>
                 <div class="d-inline-flex text-white">
-                    <p class="m-0 text-uppercase"><a class="text-white" href="">Home</a></p>
+                    <p class="m-0 text-uppercase"><a class="text-white" href="{{route('home')}}">Home</a></p>
                     <i class="fa fa-angle-double-right pt-1 px-3"></i>
                     <p class="m-0 text-uppercase">About</p>
                 </div>
@@ -16,23 +16,27 @@
     <!-- Header End -->
 
     <!-- About Start -->
-    <div class="container-fluid py-5" data-aos="fade-right">
+    <div class="container-fluid py-5">
         <div class="container py-5">
-            <div class="row align-items-center">
-                <div class="col-lg-5" data-aos="zoom-in">
-                    <img class="img-fluid rounded mb-4 mb-lg-0" src="{{ asset('asset/img/about.jpg') }}" alt="">
-                </div>
-                <div class="col-lg-7" data-aos="fade-left">
-                    <div class="text-left mb-4">
-                        <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">About Us</h5>
-                        <h1>Innovative Way To Learn</h1>
+            @foreach($abouts as $about)
+
+
+                <div class="row align-items-center">
+                    <div class="col-lg-5" data-aos="fade-right">
+                        <img class="img-fluid rounded mb-4 mb-lg-0" src="{{ asset('storage/'.$about->image) }}" alt="">
                     </div>
-                    <p>Aliquyam accusam clita nonumy ipsum sit sea clita ipsum clita, ipsum dolores amet voluptua duo
-                        dolores et sit ipsum rebum, sadipscing et erat eirmod diam kasd labore clita est...</p>
-                    <a href="" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2"
-                        data-aos="fade-up">Learn More</a>
+                    <div class="col-lg-7" data-aos="fade-left">
+                        <div class="text-left mb-4">
+                            <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">{{$about->title}}</h5>
+                            <h1>{{$about->heading}}</h1>
+                        </div>
+                        <p>
+                            {!! $about->description !!}
+                        </p>
+{{--                        <a href="" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Learn More</a>--}}
+                    </div>
                 </div>
-            </div>
+            @endforeach
         </div>
     </div>
     <!-- About End -->
@@ -94,42 +98,36 @@
     <!-- Testimonial Start -->
     <div class="container-fluid py-5" data-aos="fade-up">
         <div class="container py-5">
-            <div class="text-center mb-5">
-                <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;" data-aos="zoom-in">Testimonial
-                </h5>
-                <h1 data-aos="fade-up">What Say Our Students</h1>
+            <div class="text-center mb-5" data-aos="fade-down">
+                <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Testimonial</h5>
+                <h1>What Say Our Students</h1>
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-8">
+
+
+
                     <div class="owl-carousel testimonial-carousel">
-                        <div class="text-center" data-aos="fade-right">
-                            <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
-                            <h4 class="font-weight-normal mb-4">Dolor eirmod diam stet kasd sed...</h4>
-                            <img class="img-fluid mx-auto mb-3" src="{{ asset('asset/img/testimonial-1.jpg') }}"
-                                alt="">
-                            <h5 class="m-0">Client Name</h5>
-                            <span>Profession</span>
-                        </div>
-                        <div class="text-center" data-aos="fade-left">
-                            <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
-                            <h4 class="font-weight-normal mb-4">Dolor eirmod diam stet kasd sed...</h4>
-                            <img class="img-fluid mx-auto mb-3" src="{{ asset('asset/img/testimonial-2.jpg') }}"
-                                alt="">
-                            <h5 class="m-0">Client Name</h5>
-                            <span>Profession</span>
-                        </div>
-                        <div class="text-center" data-aos="fade-right">
-                            <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
-                            <h4 class="font-weight-normal mb-4">Dolor eirmod diam stet kasd sed...</h4>
-                            <img class="img-fluid mx-auto mb-3" src="{{ asset('asset/img/testimonial-3.jpg') }}"
-                                alt="">
-                            <h5 class="m-0">Client Name</h5>
-                            <span>Profession</span>
-                        </div>
+                        @foreach($testimonials as $testimonial)
+                            <div class="text-center" data-aos="fade-up" data-aos-delay="{{ $loop->index * 100 }}">
+                                <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
+                                <h4 class="font-weight-normal mb-4">
+
+                                    {!! $testimonial->msg !!}
+                                </h4>
+                                <img class="img-fluid mx-auto mb-3" src="{{ asset('storage/'.$testimonial->image) }}"
+                                     alt="">
+                                <h5 class="m-0">{{$testimonial->name}}</h5>
+                                <span>Profession</span>
+                            </div>
+
+                        @endforeach
                     </div>
+
                 </div>
             </div>
         </div>
     </div>
     <!-- Testimonial End -->
+
 @endsection

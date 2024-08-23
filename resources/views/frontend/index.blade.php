@@ -4,75 +4,64 @@
     <div class="container-fluid p-0 pb-5 mb-5">
         <div id="header-carousel" class="carousel slide carousel-fade" data-ride="carousel" data-aos="fade-up">
             <ol class="carousel-indicators" data-aos="fade-down">
-                <li data-target="#header-carousel" data-slide-to="0" class="active"></li>
-                <li data-target="#header-carousel" data-slide-to="1"></li>
-                <li data-target="#header-carousel" data-slide-to="2"></li>
+                @foreach($banners as $key => $banner)
+                    <li data-target="#header-carousel" data-slide-to="{{ $key }}" class="{{ $key == 0 ? 'active' : '' }}"></li>
+                @endforeach
             </ol>
+
             <div class="carousel-inner">
-                <div class="carousel-item active" style="min-height: 300px;" data-aos="fade-right">
-                    <img class="position-relative w-100" src="{{ asset('asset/img/carousel-1.jpg') }}"
-                        style="min-height: 300px; object-fit: cover;">
-                    <div class="carousel-caption d-flex align-items-center justify-content-center">
-                        <div class="p-5" style="width: 100%; max-width: 900px;">
-                            <h5 class="text-white text-uppercase mb-md-3">Best Online Courses</h5>
-                            <h1 class="display-3 text-white mb-md-4">Best Education From Your Home</h1>
-                            <a href="" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Learn
-                                More</a>
+                @foreach($banners as $key => $banner)
+                    <div class="carousel-item {{ $key == 0 ? 'active' : '' }}" style="min-height: 300px;" data-aos="fade-right">
+                        <img class="position-relative w-100" src="{{ asset('storage/'.$banner->image) }}"
+                             style="min-height: 300px; object-fit: cover;">
+                        <div class="carousel-caption d-flex align-items-center justify-content-center">
+                            <div class="p-5" style="width: 100%; max-width: 900px;">
+                                <h5 class="text-white text-uppercase mb-md-3">{{$banner->title}}</h5>
+                                <h1 class="display-3 text-white mb-md-4">{{$banner->sub_title}}</h1>
+                                <a href="" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Learn More</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="carousel-item" style="min-height: 300px;" data-aos="fade-left">
-                    <img class="position-relative w-100" src="{{ asset('asset/img/carousel-2.jpg') }}"
-                        style="min-height: 300px; object-fit: cover;">
-                    <div class="carousel-caption d-flex align-items-center justify-content-center">
-                        <div class="p-5" style="width: 100%; max-width: 900px;">
-                            <h5 class="text-white text-uppercase mb-md-3">Best Online Courses</h5>
-                            <h1 class="display-3 text-white mb-md-4">Best Online Learning Platform</h1>
-                            <a href="" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Learn
-                                More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item" style="min-height: 300px;" data-aos="fade-left">
-                    <img class="position-relative w-100" src="{{ asset('asset/img/carousel-3.jpg') }}"
-                        style="min-height: 300px; object-fit: cover;">
-                    <div class="carousel-caption d-flex align-items-center justify-content-center">
-                        <div class="p-5" style="width: 100%; max-width: 900px;">
-                            <h5 class="text-white text-uppercase mb-md-3">Best Online Courses</h5>
-                            <h1 class="display-3 text-white mb-md-4">New Way To Learn From Home</h1>
-                            <a href="" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Learn
-                                More</a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
+
+            <a class="carousel-control-prev" href="#header-carousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#header-carousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
     </div>
     <!-- Carousel End -->
 
 
 
+
     <!-- About Start -->
     <div class="container-fluid py-5">
         <div class="container py-5">
+            @foreach($abouts as $about)
+
+
             <div class="row align-items-center">
                 <div class="col-lg-5" data-aos="fade-right">
-                    <img class="img-fluid rounded mb-4 mb-lg-0" src="{{ asset('asset/img/about.jpg') }}" alt="">
+                    <img class="img-fluid rounded mb-4 mb-lg-0" src="{{ asset('storage/'.$about->image) }}" alt="">
                 </div>
                 <div class="col-lg-7" data-aos="fade-left">
                     <div class="text-left mb-4">
-                        <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">About Us</h5>
-                        <h1>Innovative Way To Learn</h1>
+                        <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">{{$about->title}}</h5>
+                        <h1>{{$about->heading}}</h1>
                     </div>
-                    <p>Aliquyam accusam clita nonumy ipsum sit sea clita ipsum clita, ipsum dolores amet voluptua duo
-                        dolores et sit ipsum rebum, sadipscing et erat eirmod diam kasd labore clita est. Diam sanctus
-                        gubergren sit rebum clita amet, sea est sea vero sed et. Sadipscing labore tempor at sit dolor clita
-                        consetetur diam. Diam ut diam tempor no et, lorem dolore invidunt no nonumy stet ea labore, dolor
-                        justo et sit gubergren diam sed sed no ipsum. Sit tempor ut nonumy elitr dolores justo aliquyam
-                        ipsum stet</p>
+                    <p>
+                        {!! $about->description !!}
+                    </p>
                     <a href="" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Learn More</a>
                 </div>
             </div>
+            @endforeach
         </div>
     </div>
     <!-- About End -->
@@ -87,82 +76,22 @@
                 <h1>Explore Top Subjects</h1>
             </div>
             <div class="row">
-                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="cat-item position-relative overflow-hidden rounded mb-2">
-                        <img class="img-fluid" src="{{ asset('asset/img/cat-1.jpg') }}" alt="">
-                        <a class="cat-overlay text-white text-decoration-none" href="{{route('coursesdetails')}}">
-                            <h4 class="text-white font-weight-medium">Web Design</h4>
-                            <span>100 Courses</span>
-                        </a>
+                @foreach($services as $service)
+                    <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="{{ $loop->index * 100 }}">
+                        <div class="cat-item position-relative overflow-hidden rounded mb-2">
+                            <img class="img-fluid" src="{{ asset('storage/'.$service->image) }}" alt="{{ $service->title }}">
+                            <a class="cat-overlay text-white text-decoration-none" href="{{ route('coursesdetails', ['id' => $service->id]) }}">
+                                <h4 class="text-white font-weight-medium">{{ $service->title }}</h4>
+                                <span>{{ $service->heading }}</span>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="cat-item position-relative overflow-hidden rounded mb-2">
-                        <img class="img-fluid" src="{{ asset('asset/img/cat-2.jpg') }}" alt="">
-                        <a class="cat-overlay text-white text-decoration-none" href="">
-                            <h4 class="text-white font-weight-medium">Development</h4>
-                            <span>100 Courses</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="cat-item position-relative overflow-hidden rounded mb-2">
-                        <img class="img-fluid" src="{{ asset('asset/img/cat-3.jpg') }}" alt="">
-                        <a class="cat-overlay text-white text-decoration-none" href="">
-                            <h4 class="text-white font-weight-medium">Game Design</h4>
-                            <span>100 Courses</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="400">
-                    <div class="cat-item position-relative overflow-hidden rounded mb-2">
-                        <img class="img-fluid" src="{{ asset('asset/img/cat-4.jpg') }}" alt="">
-                        <a class="cat-overlay text-white text-decoration-none" href="">
-                            <h4 class="text-white font-weight-medium">Apps Design</h4>
-                            <span>100 Courses</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="500">
-                    <div class="cat-item position-relative overflow-hidden rounded mb-2">
-                        <img class="img-fluid" src="{{ asset('asset/img/cat-5.jpg') }}" alt="">
-                        <a class="cat-overlay text-white text-decoration-none" href="">
-                            <h4 class="text-white font-weight-medium">Marketing</h4>
-                            <span>100 Courses</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="600">
-                    <div class="cat-item position-relative overflow-hidden rounded mb-2">
-                        <img class="img-fluid" src="{{ asset('asset/img/cat-6.jpg') }}" alt="">
-                        <a class="cat-overlay text-white text-decoration-none" href="">
-                            <h4 class="text-white font-weight-medium">Research</h4>
-                            <span>100 Courses</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="700">
-                    <div class="cat-item position-relative overflow-hidden rounded mb-2">
-                        <img class="img-fluid" src="{{ asset('asset/img/cat-7.jpg') }}" alt="">
-                        <a class="cat-overlay text-white text-decoration-none" href="">
-                            <h4 class="text-white font-weight-medium">Content Writing</h4>
-                            <span>100 Courses</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="800">
-                    <div class="cat-item position-relative overflow-hidden rounded mb-2">
-                        <img class="img-fluid" src="{{ asset('asset/img/cat-8.jpg') }}" alt="">
-                        <a class="cat-overlay text-white text-decoration-none" href="">
-                            <h4 class="text-white font-weight-medium">SEO</h4>
-                            <span>100 Courses</span>
-                        </a>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
     <!-- Category End -->
+
 
 
 
@@ -367,82 +296,30 @@
                 <h1>Meet Our Teachers</h1>
             </div>
             <div class="row">
-                <div class="col-md-6 col-lg-3 text-center team mb-4" data-aos="fade-up" data-aos-delay="100">
+                @foreach($teams as $team)
+                <div class="col-md-6 col-lg-3 text-center team mb-4" data-aos="fade-up" data-aos-delay="{{ $loop->index * 100 }}">
+
+
                     <div class="team-item rounded overflow-hidden mb-2">
                         <div class="team-img position-relative">
-                            <img class="img-fluid" src="{{ asset('asset/img/team-1.jpg') }}" alt="">
+                            <img class="img-fluid" src="{{ asset('storage/'.$team->image) }}" alt="">
                             <div class="team-social">
-                                <a class="btn btn-outline-light btn-square mx-1" href="#"><i
-                                        class="fab fa-twitter"></i></a>
-                                <a class="btn btn-outline-light btn-square mx-1" href="#"><i
+                                <a class="btn btn-outline-light btn-square mx-1" href="{{$team->in_url}}"><i
+                                        class="fab fa-instagram"></i></a>
+                                <a class="btn btn-outline-light btn-square mx-1" href="{{$team->fb_url}}"><i
                                         class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-outline-light btn-square mx-1" href="#"><i
-                                        class="fab fa-linkedin-in"></i></a>
+                                <a class="btn btn-outline-light btn-square mx-1" href="{{$team->wat_url}}"><i
+                                        class="fab fa-whatsapp"></i></a>
                             </div>
                         </div>
                         <div class="bg-secondary p-4">
-                            <h5>Jhon Doe</h5>
-                            <p class="m-0">Web Designer</p>
+                            <h5>{{$team->name}}</h5>
+                            <p class="m-0">{{$team->title}}</p>
                         </div>
                     </div>
+
                 </div>
-                <div class="col-md-6 col-lg-3 text-center team mb-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="team-item rounded overflow-hidden mb-2">
-                        <div class="team-img position-relative">
-                            <img class="img-fluid" src="{{ asset('asset/img/team-2.jpg') }}" alt="">
-                            <div class="team-social">
-                                <a class="btn btn-outline-light btn-square mx-1" href="#"><i
-                                        class="fab fa-twitter"></i></a>
-                                <a class="btn btn-outline-light btn-square mx-1" href="#"><i
-                                        class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-outline-light btn-square mx-1" href="#"><i
-                                        class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                        <div class="bg-secondary p-4">
-                            <h5>Jhon Doe</h5>
-                            <p class="m-0">Web Designer</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 text-center team mb-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="team-item rounded overflow-hidden mb-2">
-                        <div class="team-img position-relative">
-                            <img class="img-fluid" src="{{ asset('asset/img/team-3.jpg') }}" alt="">
-                            <div class="team-social">
-                                <a class="btn btn-outline-light btn-square mx-1" href="#"><i
-                                        class="fab fa-twitter"></i></a>
-                                <a class="btn btn-outline-light btn-square mx-1" href="#"><i
-                                        class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-outline-light btn-square mx-1" href="#"><i
-                                        class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                        <div class="bg-secondary p-4">
-                            <h5>Jhon Doe</h5>
-                            <p class="m-0">Web Designer</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 text-center team mb-4" data-aos="fade-up" data-aos-delay="400">
-                    <div class="team-item rounded overflow-hidden mb-2">
-                        <div class="team-img position-relative">
-                            <img class="img-fluid" src="{{ asset('asset/img/team-4.jpg') }}" alt="">
-                            <div class="team-social">
-                                <a class="btn btn-outline-light btn-square mx-1" href="#"><i
-                                        class="fab fa-twitter"></i></a>
-                                <a class="btn btn-outline-light btn-square mx-1" href="#"><i
-                                        class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-outline-light btn-square mx-1" href="#"><i
-                                        class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                        <div class="bg-secondary p-4">
-                            <h5>Jhon Doe</h5>
-                            <p class="m-0">Web Designer</p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -459,38 +336,26 @@
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-8">
+
+
+
                     <div class="owl-carousel testimonial-carousel">
-                        <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                        @foreach($testimonials as $testimonial)
+                        <div class="text-center" data-aos="fade-up" data-aos-delay="{{ $loop->index * 100 }}">
                             <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
-                            <h4 class="font-weight-normal mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum
-                                elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos
-                                labore diam</h4>
-                            <img class="img-fluid mx-auto mb-3" src="{{ asset('asset/img/testimonial-1.jpg') }}"
+                            <h4 class="font-weight-normal mb-4">
+
+                            {!! $testimonial->msg !!}
+                            </h4>
+                            <img class="img-fluid mx-auto mb-3" src="{{ asset('storage/'.$testimonial->image) }}"
                                 alt="">
-                            <h5 class="m-0">Client Name</h5>
+                            <h5 class="m-0">{{$testimonial->name}}</h5>
                             <span>Profession</span>
                         </div>
-                        <div class="text-center" data-aos="fade-up" data-aos-delay="200">
-                            <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
-                            <h4 class="font-weight-normal mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum
-                                elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos
-                                labore diam</h4>
-                            <img class="img-fluid mx-auto mb-3" src="{{ asset('asset/img/testimonial-2.jpg') }}"
-                                alt="">
-                            <h5 class="m-0">Client Name</h5>
-                            <span>Profession</span>
-                        </div>
-                        <div class="text-center" data-aos="fade-up" data-aos-delay="300">
-                            <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
-                            <h4 class="font-weight-normal mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum
-                                elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos
-                                labore diam</h4>
-                            <img class="img-fluid mx-auto mb-3" src="{{ asset('asset/img/testimonial-3.jpg') }}"
-                                alt="">
-                            <h5 class="m-0">Client Name</h5>
-                            <span>Profession</span>
-                        </div>
+
+                        @endforeach
                     </div>
+
                 </div>
             </div>
         </div>
@@ -507,36 +372,23 @@
                 <h1>Latest From Our Blog</h1>
             </div>
             <div class="row pb-3">
+                @foreach($blogs as $blog)
+
+
                 <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="blog-item position-relative overflow-hidden rounded mb-2">
-                        <img class="img-fluid" src="{{ asset('asset/img/blog-1.jpg') }}" alt="">
+                        <img class="img-fluid" src="{{ asset('storage/'.$blog->image) }}" alt="">
                         <a class="blog-overlay text-decoration-none" href="">
-                            <h5 class="text-white mb-3">Lorem elitr magna stet eirmod labore amet labore clita at ut clita
+                            <h5 class="text-white mb-3">
+                                {{$blog->short_description}}
                             </h5>
-                            <p class="text-primary m-0">Jan 01, 2050</p>
+                            <p class="text-primary m-0">{{ \Carbon\Carbon::parse($blog->created_at)->format('F d, Y') }}</p>
+
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="blog-item position-relative overflow-hidden rounded mb-2">
-                        <img class="img-fluid" src="{{ asset('asset/img/blog-2.jpg') }}" alt="">
-                        <a class="blog-overlay text-decoration-none" href="">
-                            <h5 class="text-white mb-3">Lorem elitr magna stet eirmod labore amet labore clita at ut clita
-                            </h5>
-                            <p class="text-primary m-0">Jan 01, 2050</p>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="blog-item position-relative overflow-hidden rounded mb-2">
-                        <img class="img-fluid" src="{{ asset('asset/img/blog-3.jpg') }}" alt="">
-                        <a class="blog-overlay text-decoration-none" href="">
-                            <h5 class="text-white mb-3">Lorem elitr magna stet eirmod labore amet labore clita at ut clita
-                            </h5>
-                            <p class="text-primary m-0">Jan 01, 2050</p>
-                        </a>
-                    </div>
-                </div>
+
+                @endforeach
             </div>
         </div>
     </div>
