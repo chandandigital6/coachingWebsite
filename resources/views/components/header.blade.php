@@ -46,27 +46,34 @@
         <div class="col-lg-9">
             <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
                 <a href="" class="text-decoration-none d-block d-lg-none">
-                    <h1 class="m-0"><span class="text-primary">E</span>COURSES</h1>
+                    <h1 class="m-0"><span class="text-primary">Real</span>Victory</h1>
                 </a>
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav py-0">
-                        <a href="{{ route('home') }}" class="nav-item nav-link {{ Request::is('/') ? 'active' : '' }}">Home</a>
-                        <a href="{{ route('about') }}" class="nav-item nav-link {{ Request::is('about') ? 'active' : '' }}">About</a>
-                        <a href="{{ route('course') }}" class="nav-item nav-link {{ Request::is('course') ? 'active' : '' }}">Courses</a>
-                        <a href="{{ route('teacher') }}" class="nav-item nav-link {{ Request::is('teacher') ? 'active' : '' }}">Teachers</a>
-                        <a href="{{ route('blog') }}" class="nav-item nav-link {{ Request::is('blog') ? 'active' : '' }}">Blog </a>
+                        <a href="{{ route('home') }}"
+                            class="nav-item nav-link {{ Request::is('/') ? 'active' : '' }}">Home</a>
+                        <a href="{{ route('about') }}"
+                            class="nav-item nav-link {{ Request::is('about') ? 'active' : '' }}">About</a>
+                        <a href="{{ route('course') }}"
+                            class="nav-item nav-link {{ Request::is('course') ? 'active' : '' }}">Courses</a>
+                        <a href="{{ route('teacher') }}"
+                            class="nav-item nav-link {{ Request::is('teacher') ? 'active' : '' }}">Teachers</a>
+                        <a href="{{ route('blog') }}"
+                            class="nav-item nav-link {{ Request::is('blog') ? 'active' : '' }}">Blog </a>
 
-                        {{--                        <div class="nav-item dropdown">--}}
-{{--                            <a href="#" class="nav-link dropdown-toggle {{ Request::is('blog*') ? 'active' : '' }}" data-toggle="dropdown">Blog</a>--}}
-{{--                            <div class="dropdown-menu rounded-0 m-0">--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-                        <a href="{{ route('contact') }}" class="nav-item nav-link {{ Request::is('contact') ? 'active' : '' }}">Contact</a>
+                        {{--                        <div class="nav-item dropdown"> --}}
+                        {{--                            <a href="#" class="nav-link dropdown-toggle {{ Request::is('blog*') ? 'active' : '' }}" data-toggle="dropdown">Blog</a> --}}
+                        {{--                            <div class="dropdown-menu rounded-0 m-0"> --}}
+                        {{--                            </div> --}}
+                        {{--                        </div> --}}
+                        <a href="{{ route('contact') }}"
+                            class="nav-item nav-link {{ Request::is('contact') ? 'active' : '' }}">Contact</a>
                     </div>
-                    <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="#" data-toggle="modal" data-target="#enrollModal">Enroll Now</a>
+                    <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="#" data-toggle="modal"
+                        data-target="#enrollModal">Enroll Now</a>
                 </div>
             </nav>
 
@@ -87,26 +94,27 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{{route('appointment.store')}}" method="post">
+                <form action="{{ route('appointment.store') }}" method="post">
                     @csrf
                     <div class="form-group">
                         <label for="name" class="font-weight-bold">Full Name</label>
-                        <input type="text" class="form-control rounded-pill border-primary" name="name" id="name"
-                            placeholder="Enter your name" required>
+                        <input type="text" class="form-control rounded-pill border-primary" name="name"
+                            id="name" placeholder="Enter your name" required>
                     </div>
                     <div class="form-group">
                         <label for="email" class="font-weight-bold">Email Address</label>
-                        <input type="email" class="form-control rounded-pill border-primary" name="email" id="email"
-                            placeholder="Enter your email" required>
+                        <input type="email" class="form-control rounded-pill border-primary" name="email"
+                            id="email" placeholder="Enter your email" required>
                     </div>
                     <div class="form-group">
                         <label for="phone" class="font-weight-bold">Phone Number</label>
-                        <input type="tel" class="form-control rounded-pill border-primary" name="number" id="phone"
-                            placeholder="Enter your phone number" required>
+                        <input type="tel" class="form-control rounded-pill border-primary" name="number"
+                            id="phone" placeholder="Enter your phone number" required>
                     </div>
                     <div class="form-group">
                         <label for="course" class="font-weight-bold">Select Course</label>
-                        <select class="form-control rounded-pill border-primary" name="course" id="course" required>
+                        <select class="form-control rounded-pill border-primary" name="course" id="course"
+                            required>
                             <option value="" disabled selected>Select Course</option>
                             <option value="php">PHP</option>
                             <option value="web designing">WEB DESIGNING</option>
