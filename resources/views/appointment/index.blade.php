@@ -46,13 +46,11 @@
                                 <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>service</th>
-                                    <th>doctor name</th>
-                                    <th>patient name</th>
+                                    <th> name</th>
                                     <th>email</th>
                                     <th>number</th>
-                                    <th>date</th>
-                                    <th>time</th>
+                                    <th>course</th>
+
                                     <th>Action</th>
                                 </tr>
                                 </thead>
@@ -60,17 +58,13 @@
                                 @forelse ($appointmentData as $appointment)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $appointment->service }}</td>
-                                        <td>{{$appointment->doctor}}</td>
+
                                         <td>{{$appointment->name}}</td>
                                         <td>{{$appointment->email}}</td>
                                         <td>{{$appointment->number}}</td>
-                                        <td>{{ $appointment->date ? $appointment->date->format('Y-m-d') : 'Not specified' }}</td>
-                                        <td> @if($appointment->time)
-                                                {{ \Illuminate\Support\Carbon::parse($appointment->time)->format('H:i') }}
-                                            @else
-                                                not mention
-                                            @endif</td>
+                                        <td>{{$appointment->course}}</td>
+{{--                                        <td>{{ $appointment->date ? $appointment->date->format('Y-m-d') : 'Not specified' }}</td>--}}
+
                                         <td>
 {{--                                            <a href="{{ route('banner.edit', $appointment->id) }}" class="btn btn-primary">Edit</a>--}}
                                             <a href="{{ route('appointment.delete', $appointment->id) }}" class="btn btn-danger">Delete</a>

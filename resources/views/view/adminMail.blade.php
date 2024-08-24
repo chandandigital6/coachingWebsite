@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0;">
     <meta http-equiv="X-UA-Compatible" content="IE=edge;">
-    <title>Student Appointment Confirmation</title>
+    <title>New Appointment Created</title>
     <style type="text/css">
-        /* General Styles */
         body, table, td, a {
             -webkit-text-size-adjust: 100%;
             -ms-text-size-adjust: 100%;
@@ -24,32 +23,30 @@
             outline: none;
             text-decoration: none;
         }
-        /* Container */
         .email-container {
             max-width: 600px;
-            margin: 0 auto;
+            margin: 20px auto;
             background-color: #ffffff;
             padding: 20px;
-            border-radius: 5px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-        /* Header */
         .email-header {
             text-align: center;
             padding-bottom: 20px;
-            border-bottom: 1px solid #dddddd;
+            border-bottom: 1px solid #eeeeee;
         }
-        .email-header h1 {
+        .email-header h2 {
             margin: 0;
             font-size: 24px;
-            color: #333333;
+            color: #4CAF50;
         }
-        /* Body */
         .email-body {
             padding: 20px 0;
         }
         .email-body p {
             font-size: 16px;
-            line-height: 1.5;
+            line-height: 1.6;
             margin: 10px 0;
         }
         .email-body ul {
@@ -57,32 +54,33 @@
             padding: 0;
             margin: 10px 0;
         }
-        .email-body li {
+        .email-body ul li {
             font-size: 16px;
             margin: 5px 0;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
         }
         .email-body strong {
-            color: #000000;
+            color: #333333;
         }
-        /* Footer */
         .email-footer {
             text-align: center;
             padding-top: 20px;
-            border-top: 1px solid #dddddd;
+            border-top: 1px solid #eeeeee;
             font-size: 12px;
             color: #888888;
         }
-        /* Responsive */
         @media only screen and (max-width: 600px) {
             .email-container {
                 width: 100%;
                 padding: 10px;
             }
-            .email-header h1 {
+            .email-header h2 {
                 font-size: 20px;
             }
             .email-body p,
-            .email-body li {
+            .email-body ul li {
                 font-size: 14px;
             }
         }
@@ -92,33 +90,25 @@
 <div class="email-container">
     <!-- Header -->
     <div class="email-header">
-        <h1>Appointment Confirmation</h1>
+        <h2>New Appointment Created</h2>
     </div>
 
     <!-- Body -->
     <div class="email-body">
-        <p>Dear {{ $appointment->name }},</p>
-
-        <p>We are pleased to confirm your appointment with us. Here are the details:</p>
-
+        <p><strong>Appointment Details:</strong></p>
         <ul>
             <li><strong>Name:</strong> {{ $appointment->name }}</li>
             <li><strong>Email:</strong> {{ $appointment->email }}</li>
             <li><strong>Phone Number:</strong> {{ $appointment->number }}</li>
             <li><strong>Course:</strong> {{ $appointment->course }}</li>
-
         </ul>
-
-        <p>If you have any questions or need to reschedule, please feel free to contact us at +918423269465.</p>
-
-        <p>Thank you,<br>
-            RealVictoryGroups.com</p>
+        <p style="color: #555555;">Please review the above details. If any information is incorrect, contact us immediately.</p>
     </div>
 
     <!-- Footer -->
     <div class="email-footer">
         <p>This is an automated notification. Please do not reply to this email.</p>
-        <p>&copy; {{ date('Y') }}  RealVictoryGroups.com. All rights reserved.</p>
+        <p>&copy; {{ date('Y') }} Your Organization Name. All rights reserved.</p>
     </div>
 </div>
 </body>
