@@ -268,7 +268,7 @@
                             <a class="blog-overlay text-decoration-none"
                                href="{{ route('blogDetails-blog', $blog->id) }}">
                                 <h5 class="text-white mb-3">
-                                    {{ $blog->short_description }}
+                                    {{ $blog->title }}
                                 </h5>
                                 <p class="text-primary m-0">
                                     {{ \Carbon\Carbon::parse($blog->created_at)->format('F d, Y') }}</p>
