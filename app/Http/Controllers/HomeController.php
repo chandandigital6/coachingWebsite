@@ -68,8 +68,9 @@ class HomeController extends Controller
     public function course()
     {
         $services=Service::all();
+        $course=Course::all();
         $seos = Seo::where('page', 'course')->get();
-        return view('frontend.course',compact('services','seos'));
+        return view('frontend.course',compact('services','seos','course'));
     }
 
     public function single(Blog $blog)

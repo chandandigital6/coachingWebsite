@@ -4,14 +4,13 @@
     <!-- Header Start -->
     <div class="container-fluid page-header" style="margin-bottom: 90px;" data-aos="fade-down" data-aos-duration="1000">
         <div class="container">
-            <div class="d-flex flex-column justify-content-center align-items-center text-center" style="min-height: 300px;">
-                <h3 class="display-4 text-white text-uppercase mb-2">Contact Us</h3>
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb justify-content-center bg-transparent p-0 mb-0">
-                        <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
-                        <li class="breadcrumb-item active text-white" aria-current="page">Contact</li>
-                    </ol>
-                </nav>
+            <div class="d-flex flex-column justify-content-center" style="min-height: 300px">
+                <h3 class="display-4 text-white text-uppercase">Contact</h3>
+                <div class="d-inline-flex text-white">
+                    <p class="m-0 text-uppercase"><a class="text-white" href="{{route('home')}}">Home</a></p>
+                    <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                    <p class="m-0 text-uppercase">Contact</p>
+                </div>
             </div>
         </div>
     </div>
@@ -29,26 +28,37 @@
                 <div class="col-lg-6 mb-4">
                     <div class="contact-form bg-white rounded p-5 shadow-lg border border-light" data-aos="zoom-in" data-aos-duration="1000">
                         <div id="success"></div>
-                        <form name="sentMessage" id="contactForm" novalidate="novalidate">
-                            <div class="form-group mb-3">
-                                <input type="text" class="form-control border-0 p-4 rounded-0 shadow-sm" id="name" placeholder="Your Name" required="required" />
-                                <p class="help-block text-danger"></p>
+                        <form action="{{ route('appointment.store') }}" method="post">
+                            @csrf
+                            <div class="form-group">
+                                <label for="name" class="font-weight-bold text-primary">Full Name</label>
+                                <input type="text" class="form-control rounded-pill border-primary" name="name"
+                                    id="name" placeholder="Enter your name" required>
                             </div>
-                            <div class="form-group mb-3">
-                                <input type="email" class="form-control border-0 p-4 rounded-0 shadow-sm" id="email" placeholder="Your Email" required="required" />
-                                <p class="help-block text-danger"></p>
+                            <div class="form-group">
+                                <label for="email" class="font-weight-bold text-primary">Email Address</label>
+                                <input type="email" class="form-control rounded-pill border-primary" name="email"
+                                    id="email" placeholder="Enter your email" required>
                             </div>
-                            <div class="form-group mb-3">
-                                <input type="text" class="form-control border-0 p-4 rounded-0 shadow-sm" id="subject" placeholder="Subject" required="required" />
-                                <p class="help-block text-danger"></p>
+                            <div class="form-group">
+                                <label for="phone" class="font-weight-bold text-primary">Phone Number</label>
+                                <input type="tel" class="form-control rounded-pill border-primary" name="number"
+                                    id="phone" placeholder="Enter your phone number" required>
                             </div>
-                            <div class="form-group mb-4">
-                                <textarea class="form-control border-0 py-3 px-4 rounded-0 shadow-sm" rows="5" id="message" placeholder="Message" required="required"></textarea>
-                                <p class="help-block text-danger"></p>
+                            <div class="form-group">
+                                <label for="course" class="font-weight-bold text-primary">Select Course</label>
+                                <select class="form-control rounded-pill border-primary" name="course" id="course"
+                                    required>
+                                    <option value="" disabled selected>Select Course</option>
+                                    <option value="php">PHP</option>
+                                    <option value="web designing">WEB DESIGNING</option>
+                                    <option value="full stack">FULL STACK</option>
+                                    <option value="digital marketing"> Digital Marketing</option>
+                                    <option value="graphics Designing"> Graphics Designing</option>
+                                </select>
                             </div>
-                            <div class="text-center">
-                                <button class="btn btn-primary py-3 px-5 rounded-pill shadow" type="submit" id="sendMessageButton">Send Message</button>
-                            </div>
+                            <button type="submit"
+                                class="rounded-pill btn btn-primary btn-block border-0 py-3">Submit</button>
                         </form>
                     </div>
                 </div>

@@ -1,9 +1,5 @@
 
 @extends('components.main',['seos' => $seos])
-@section('content')
-
-@extends('components.main')
-
 
 @section('content')
     <!-- Header Start -->

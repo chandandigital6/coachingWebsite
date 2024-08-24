@@ -32,6 +32,7 @@ Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('/course', [HomeController::class, 'course'])->name('course');
 Route::get('/blogDetails/{blog}', [HomeController::class, 'single'])->name('blogDetails-blog');
 Route::get('/search', [HomeController::class, 'search'])->name('searchBlogs');
+Route::get('/thankyou', [HomeController::class, 'thankyou'])->name('thankyou');
 
 //Route::get('',[HomeController::class,'blogDetails'])->name('blog-details');
 Route::get('/teacher', [HomeController::class, 'teacher'])->name('teacher');
@@ -168,6 +169,8 @@ Route::group(['middleware' => ['auth']],function (){
     Route::get('seo/delete/{seo}',[SeoController::class,'delete'])->name('seo.delete');
     Route::get('seo/duplicate/{seo}',[SeoController::class,'duplicate'])->name('seo.duplicate');
 });
+
+    
 
 
 
