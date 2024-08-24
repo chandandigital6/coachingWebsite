@@ -86,10 +86,12 @@ class HomeController extends Controller
         return view('frontend.teacher',compact('teams','seos'));
     }
 
-    public function coursesdetails()
+    public function coursesdetails(Course $courses)
     {
-        $seos = Seo::where('page', 'course')->get();
-//        $seos= Seo::where('service_id', $service->id)->get();
-        return view('frontend.courses-details',compact('seos'));
+//        dd($courses);
+//        $seos = Seo::where('page', 'course')->get();
+        $seos= Seo::where('course_id', $courses->id)->get();
+//        dd($seos);
+        return view('frontend.courses-details',compact('seos','courses'));
     }
 }

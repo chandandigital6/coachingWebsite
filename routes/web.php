@@ -35,7 +35,7 @@ Route::get('/search', [HomeController::class, 'search'])->name('searchBlogs');
 
 //Route::get('',[HomeController::class,'blogDetails'])->name('blog-details');
 Route::get('/teacher', [HomeController::class, 'teacher'])->name('teacher');
-Route::get('/coursesdetails', [HomeController::class, 'coursesdetails'])->name('coursesdetails');
+Route::get('/courseDetails/{courses}', [HomeController::class, 'coursesdetails'])->name('courseDetails-courses');
 
 
 Route::get('login-form',[AuthController::class,'index'])->name('login-form');

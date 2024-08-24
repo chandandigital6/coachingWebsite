@@ -80,7 +80,7 @@
                     <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="{{ $loop->index * 100 }}">
                         <div class="cat-item position-relative overflow-hidden rounded mb-2">
                             <img class="img-fluid" src="{{ asset('storage/'.$service->image) }}" alt="{{ $service->title }}">
-                            <a class="cat-overlay text-white text-decoration-none" href="{{ route('coursesdetails', ['id' => $service->id]) }}">
+                            <a class="cat-overlay text-white text-decoration-none" href="">
                                 <h4 class="text-white font-weight-medium">{{ $service->title }}</h4>
                                 <span>{{ $service->heading }}</span>
                             </a>
@@ -114,7 +114,7 @@
                                 <small class="m-0"><i class="fa fa-users text-primary mr-2"></i>{{$courses->number_of_student}}</small>
                                 <small class="m-0"><i class="far fa-clock text-primary mr-2"></i>{{$courses->duration}}</small>
                             </div>
-                            <a class="h5" href="">{{$courses->title}}</a>
+                            <a class="h5" href="{{route('courseDetails-courses',$courses->id)}}">{{$courses->title}}</a>
                             <div class="border-top mt-4 pt-4">
                                 <div class="d-flex justify-content-between">
                                     <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>

@@ -53,23 +53,22 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav py-0">
-                        <a href="{{ route('home') }}" class="nav-item nav-link active">Home</a>
-                        <a href="{{ route('about') }}" class="nav-item nav-link">About</a>
-                        <a href="{{ route('course') }}" class="nav-item nav-link">Courses</a>
-                        <a href="{{ route('teacher') }}" class="nav-item nav-link">Teachers</a>
+                        <a href="{{ route('home') }}" class="nav-item nav-link {{ Request::is('/') ? 'active' : '' }}">Home</a>
+                        <a href="{{ route('about') }}" class="nav-item nav-link {{ Request::is('about') ? 'active' : '' }}">About</a>
+                        <a href="{{ route('course') }}" class="nav-item nav-link {{ Request::is('course') ? 'active' : '' }}">Courses</a>
+                        <a href="{{ route('teacher') }}" class="nav-item nav-link {{ Request::is('teacher') ? 'active' : '' }}">Teachers</a>
                         <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Blog</a>
+                            <a href="#" class="nav-link dropdown-toggle {{ Request::is('blog*') ? 'active' : '' }}" data-toggle="dropdown">Blog</a>
                             <div class="dropdown-menu rounded-0 m-0">
-                                <a href="{{ route('blog') }}" class="dropdown-item">Blog List</a>
-{{--                                <a href="{{ route('single') }}" class="dropdown-item">Blog Detail</a>--}}
+                                <a href="{{ route('blog') }}" class="dropdown-item {{ Request::is('blog') ? 'active' : '' }}">Blog List</a>
                             </div>
                         </div>
-                        <a href="{{ route('contact') }}" class="nav-item nav-link">Contact</a>
+                        <a href="{{ route('contact') }}" class="nav-item nav-link {{ Request::is('contact') ? 'active' : '' }}">Contact</a>
                     </div>
-                    <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="#" data-toggle="modal"
-                        data-target="#enrollModal">Enroll Now</a>
+                    <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="#" data-toggle="modal" data-target="#enrollModal">Enroll Now</a>
                 </div>
             </nav>
+
         </div>
     </div>
 </div>
