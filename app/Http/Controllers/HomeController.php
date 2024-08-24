@@ -95,4 +95,11 @@ class HomeController extends Controller
 //        dd($seos);
         return view('frontend.courses-details',compact('seos','courses'));
     }
+
+    public function thankyou()
+    {
+        $seos = Seo::where('page', 'index')->get();
+        return view('frontend.thankyou',compact('seos'));
+    }
+
 }

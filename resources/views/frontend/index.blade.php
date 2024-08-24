@@ -114,8 +114,8 @@
     </div>
     <!-- Courses End -->
 
-    <!-- Registration Start -->
-    <div class="container-fluid bg-registration py-5" style="margin: 90px 0;" data-aos="fade-up">
+     <!-- Registration Start -->
+     <div class="container-fluid bg-registration py-5" style="margin: 90px 0;" data-aos="fade-up">
         <div class="container py-5">
             <div class="row align-items-center">
                 <div class="col-lg-7 mb-5 mb-lg-0" data-aos="fade-right">
@@ -123,11 +123,16 @@
                         <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 3px;">Need Any Courses?</h5>
                         <h1 class="text-white display-4">Get 30% Off for New Students</h1>
                     </div>
-                    <p class="text-light">Invidunt lorem justo sanctus clita. Erat lorem labore ea, justo dolor lorem ipsum ut sed eos, ipsum et dolor kasd sit ea justo. Erat justo sed sed diam. Ea et erat ut sed diam sea ipsum est dolor.</p>
+                    <p class="text-light">Invidunt lorem justo sanctus clita. Erat lorem labore ea, justo dolor lorem ipsum
+                        ut sed eos, ipsum et dolor kasd sit ea justo. Erat justo sed sed diam. Ea et erat ut sed diam sea
+                        ipsum est dolor.</p>
                     <ul class="list-unstyled text-light">
-                        <li class="py-2"><i class="fa fa-check-circle text-primary mr-3"></i>Labore eos amet dolor amet diam</li>
-                        <li class="py-2"><i class="fa fa-check-circle text-primary mr-3"></i>Etsea et sit dolor amet ipsum</li>
-                        <li class="py-2"><i class="fa fa-check-circle text-primary mr-3"></i>Diam dolor diam elitr ipsum vero</li>
+                        <li class="py-2"><i class="fa fa-check-circle text-primary mr-3"></i>Labore eos amet dolor amet
+                            diam</li>
+                        <li class="py-2"><i class="fa fa-check-circle text-primary mr-3"></i>Etsea et sit dolor amet
+                            ipsum</li>
+                        <li class="py-2"><i class="fa fa-check-circle text-primary mr-3"></i>Diam dolor diam elitr ipsum
+                            vero</li>
                     </ul>
                 </div>
                 <div class="col-lg-5" data-aos="fade-left">
@@ -140,19 +145,33 @@
                                 @csrf
                                 <div class="form-group">
                                     <label for="name" class="font-weight-bold text-white">Full Name</label>
-                                    <input type="text" class="form-control rounded-pill border-primary" name="name" id="name" placeholder="Enter your name" required>
+                                    <input type="text" class="form-control rounded-pill border-primary" name="name"
+                                        id="name" placeholder="Enter your name" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="email" class="font-weight-bold text-white">Email Address</label>
-                                    <input type="email" class="form-control rounded-pill border-primary" name="email" id="email" placeholder="Enter your email" required>
+                                    <input type="email" class="form-control rounded-pill border-primary" name="email"
+                                        id="email" placeholder="Enter your email" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="phone" class="font-weight-bold text-white">Phone Number</label>
-                                    <input type="tel" class="form-control rounded-pill border-primary" name="phone" id="phone" placeholder="Enter your phone number" required>
+                                    <input type="tel" class="form-control rounded-pill border-primary" name="number"
+                                        id="phone" placeholder="Enter your phone number" required>
                                 </div>
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-dark btn-block rounded-pill py-2 px-4 font-weight-bold">Submit</button>
+                                    <label for="course" class="font-weight-bold text-white">Select Course</label>
+                                    <select class="form-control rounded-pill border-primary" name="course" id="course"
+                                        required>
+                                        <option value="" disabled selected>Select Course</option>
+                                        <option value="php">PHP</option>
+                                        <option value="web designing">WEB DESIGNING</option>
+                                        <option value="full stack">FULL STACK</option>
+                                        <option value="digital marketing"> Digital Marketing</option>
+                                        <option value="graphics Designing"> Graphics Designing</option>
+                                    </select>
                                 </div>
+                                <button type="submit"
+                                    class="rounded-pill btn btn-dark btn-block border-0 py-3">Submit</button>
                             </form>
                         </div>
                     </div>
