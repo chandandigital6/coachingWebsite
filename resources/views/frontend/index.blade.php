@@ -114,6 +114,40 @@
     </div>
     <!-- Courses End -->
 
+    <!-- Testimonial Start -->
+    <div class="container-fluid py-5" data-aos="fade-up">
+        <div class="container py-5">
+            <div class="text-center mb-5" data-aos="fade-down">
+                <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Testimonial</h5>
+                <h1>What Say Our Students</h1>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+
+
+
+                    <div class="owl-carousel testimonial-carousel">
+                        @foreach ($testimonials as $testimonial)
+                            <div class="text-center" data-aos="fade-up" data-aos-delay="{{ $loop->index * 100 }}">
+                                <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
+                                <h4 class="font-weight-normal mb-4">
+
+                                    {!! $testimonial->msg !!}
+                                </h4>
+                                <img class="img-fluid mx-auto mb-3" src="{{ asset('storage/' . $testimonial->image) }}"
+                                     alt="">
+                                <h5 class="m-0">{{ $testimonial->name }}</h5>
+                                <span>Profession</span>
+                            </div>
+                        @endforeach
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
+
      <!-- Registration Start -->
      <div class="container-fluid bg-registration py-5" style="margin: 90px 0;" data-aos="fade-up">
         <div class="container py-5">
