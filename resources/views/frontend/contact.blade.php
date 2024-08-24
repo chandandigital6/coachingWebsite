@@ -4,14 +4,13 @@
     <!-- Header Start -->
     <div class="container-fluid page-header" style="margin-bottom: 90px;" data-aos="fade-down" data-aos-duration="1000">
         <div class="container">
-            <div class="d-flex flex-column justify-content-center align-items-center text-center" style="min-height: 300px;">
-                <h3 class="display-4 text-white text-uppercase mb-2">Contact Us</h3>
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb justify-content-center bg-transparent p-0 mb-0">
-                        <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
-                        <li class="breadcrumb-item active text-white" aria-current="page">Contact</li>
-                    </ol>
-                </nav>
+            <div class="d-flex flex-column justify-content-center" style="min-height: 300px">
+                <h3 class="display-4 text-white text-uppercase">Contact</h3>
+                <div class="d-inline-flex text-white">
+                    <p class="m-0 text-uppercase"><a class="text-white" href="{{route('home')}}">Home</a></p>
+                    <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                    <p class="m-0 text-uppercase">Contact</p>
+                </div>
             </div>
         </div>
     </div>

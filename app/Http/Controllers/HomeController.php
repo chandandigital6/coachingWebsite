@@ -16,27 +16,27 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $banners=Banner::all();
-        $abouts=About::all();
-        $services=Service::all();
-        $teams =Team::all() ;
-        $testimonials=Testimonial::all();
-        $blogs=Blog::all();
-        $course=Course::all();
-        return view('frontend.index',compact('banners','abouts','services','teams','testimonials','blogs','course'));
+        $banners = Banner::all();
+        $abouts = About::all();
+        $services = Service::all();
+        $teams = Team::all();
+        $testimonials = Testimonial::all();
+        $blogs = Blog::all();
+        $course = Course::all();
+        return view('frontend.index', compact('banners', 'abouts', 'services', 'teams', 'testimonials', 'blogs', 'course'));
     }
 
     public function about()
     {
-        $abouts=About::all();
-        $testimonials=Testimonial::all();
-        return view('frontend.about',compact('testimonials','abouts'));
+        $abouts = About::all();
+        $testimonials = Testimonial::all();
+        return view('frontend.about', compact('testimonials', 'abouts'));
     }
 
     public function blog()
     {
         $blogs = Blog::all();
-//        $categories = Category::withCount('posts')->get(); // Assuming 'Category' model and 'posts' relationship
+        //        $categories = Category::withCount('posts')->get(); // Assuming 'Category' model and 'posts' relationship
         $recentPosts = Blog::orderBy('created_at', 'desc')->take(5)->get(); // Fetch the 5 most recent posts
 
         return view('frontend.blog', compact('blogs', 'recentPosts'));
@@ -48,7 +48,7 @@ class HomeController extends Controller
             ->orWhere('short_description', 'like', "%$query%")
             ->get();
 
-//        $categories = Category::withCount('posts')->get();
+        //        $categories = Category::withCount('posts')->get();
         $recentPosts = Blog::orderBy('created_at', 'desc')->take(5)->get();
 
         return view('frontend.blog', compact('blogs', 'recentPosts'));
@@ -62,25 +62,30 @@ class HomeController extends Controller
 
     public function course()
     {
-        $services=Service::all();
-        return view('frontend.course',compact('services'));
+        $services = Service::all();
+        return view('frontend.course', compact('services'));
     }
 
     public function single(Blog $blog)
     {
-        $blogs=Blog::all();
+        $blogs = Blog::all();
 
-        return view('frontend.single',compact('blog','blogs'));
+        return view('frontend.single', compact('blog', 'blogs'));
     }
 
     public function teacher()
     {
-        $teams =Team::all() ;
-        return view('frontend.teacher',compact('teams'));
+        $teams = Team::all();
+        return view('frontend.teacher', compact('teams'));
     }
 
     public function coursesdetails()
     {
         return view('frontend.courses-details');
+    }
+
+    public function thankyou()
+    {
+        return view('frontend.thankyou');
     }
 }
