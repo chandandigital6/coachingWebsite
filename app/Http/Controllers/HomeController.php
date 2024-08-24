@@ -33,9 +33,25 @@ class HomeController extends Controller
 
     public function blog()
     {
-        $blogs=Blog::all();
-        return view('frontend.blog',compact('blogs'));
+        $blogs = Blog::all();
+//        $categories = Category::withCount('posts')->get(); // Assuming 'Category' model and 'posts' relationship
+        $recentPosts = Blog::orderBy('created_at', 'desc')->take(5)->get(); // Fetch the 5 most recent posts
+
+        return view('frontend.blog', compact('blogs', 'recentPosts'));
     }
+    public function search(Request $request)
+    {
+        $query = $request->input('query');
+        $blogs = Blog::where('title', 'like', "%$query%")
+            ->orWhere('short_description', 'like', "%$query%")
+            ->get();
+
+//        $categories = Category::withCount('posts')->get();
+        $recentPosts = Blog::orderBy('created_at', 'desc')->take(5)->get();
+
+        return view('frontend.blog', compact('blogs', 'recentPosts'));
+    }
+
 
     public function contact()
     {
@@ -48,9 +64,11 @@ class HomeController extends Controller
         return view('frontend.course',compact('services'));
     }
 
-    public function single()
+    public function single(Blog $blog)
     {
-        return view('frontend.single');
+        $blogs=Blog::all();
+
+        return view('frontend.single',compact('blog','blogs'));
     }
 
     public function teacher()

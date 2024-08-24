@@ -378,7 +378,7 @@
                 <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="blog-item position-relative overflow-hidden rounded mb-2">
                         <img class="img-fluid" src="{{ asset('storage/'.$blog->image) }}" alt="">
-                        <a class="blog-overlay text-decoration-none" href="">
+                        <a class="blog-overlay text-decoration-none" href="{{route('blogDetails-blog',$blog->id)}}">
                             <h5 class="text-white mb-3">
                                 {{$blog->short_description}}
                             </h5>

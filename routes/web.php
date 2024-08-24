@@ -28,7 +28,10 @@ Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/blog', [HomeController::class, 'blog'])->name('blog');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('/course', [HomeController::class, 'course'])->name('course');
-Route::get('/single', [HomeController::class, 'single'])->name('single');
+Route::get('/blogDetails/{blog}', [HomeController::class, 'single'])->name('blogDetails-blog');
+Route::get('/search', [HomeController::class, 'search'])->name('searchBlogs');
+
+//Route::get('',[HomeController::class,'blogDetails'])->name('blog-details');
 Route::get('/teacher', [HomeController::class, 'teacher'])->name('teacher');
 Route::get('/coursesdetails', [HomeController::class, 'coursesdetails'])->name('coursesdetails');
 

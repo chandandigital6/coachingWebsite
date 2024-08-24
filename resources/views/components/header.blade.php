@@ -61,7 +61,7 @@
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Blog</a>
                             <div class="dropdown-menu rounded-0 m-0">
                                 <a href="{{ route('blog') }}" class="dropdown-item">Blog List</a>
-                                <a href="{{ route('single') }}" class="dropdown-item">Blog Detail</a>
+{{--                                <a href="{{ route('single') }}" class="dropdown-item">Blog Detail</a>--}}
                             </div>
                         </div>
                         <a href="{{ route('contact') }}" class="nav-item nav-link">Contact</a>
