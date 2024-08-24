@@ -57,12 +57,13 @@
                         <a href="{{ route('about') }}" class="nav-item nav-link {{ Request::is('about') ? 'active' : '' }}">About</a>
                         <a href="{{ route('course') }}" class="nav-item nav-link {{ Request::is('course') ? 'active' : '' }}">Courses</a>
                         <a href="{{ route('teacher') }}" class="nav-item nav-link {{ Request::is('teacher') ? 'active' : '' }}">Teachers</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle {{ Request::is('blog*') ? 'active' : '' }}" data-toggle="dropdown">Blog</a>
-                            <div class="dropdown-menu rounded-0 m-0">
-                                <a href="{{ route('blog') }}" class="dropdown-item {{ Request::is('blog') ? 'active' : '' }}">Blog List</a>
-                            </div>
-                        </div>
+                        <a href="{{ route('blog') }}" class="nav-item nav-link {{ Request::is('blog') ? 'active' : '' }}">Blog </a>
+
+                        {{--                        <div class="nav-item dropdown">--}}
+{{--                            <a href="#" class="nav-link dropdown-toggle {{ Request::is('blog*') ? 'active' : '' }}" data-toggle="dropdown">Blog</a>--}}
+{{--                            <div class="dropdown-menu rounded-0 m-0">--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
                         <a href="{{ route('contact') }}" class="nav-item nav-link {{ Request::is('contact') ? 'active' : '' }}">Contact</a>
                     </div>
                     <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="#" data-toggle="modal" data-target="#enrollModal">Enroll Now</a>

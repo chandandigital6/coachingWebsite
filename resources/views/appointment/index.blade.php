@@ -85,6 +85,7 @@
 
                     <div class="card-footer">
                         <!-- Pagination links can be added here if needed -->
+                        {{$appointmentData->links()}}
                     </div>
                 </div>
             </div>
