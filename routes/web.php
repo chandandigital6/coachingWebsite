@@ -7,6 +7,7 @@ use App\Http\Controllers\BannerController;
 
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\PlanCOntroller;
+use App\Http\Controllers\SeoController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\TestimonialController;
@@ -159,7 +160,13 @@ Route::group(['middleware' => ['auth']],function (){
     Route::get('course/delete/{course}',[CourseController::class,'delete'])->name('course.delete');
     Route::get('course/duplicate/{course}',[CourseController::class,'duplicate'])->name('course.duplicate');
 
-
+    Route::get('seo/index',[SeoController::class,'index'])->name('seo.index');
+    Route::get('seo/create',[SeoController::class,'create'])->name('seo.create');
+    Route::post('seo/store',[SeoController::class,'store'])->name('seo.store');
+    Route::get('seo/edit/{seo}',[SeoController::class,'edit'])->name('seo.edit');
+    Route::post('seo/update/{seo}',[SeoController::class,'update'])->name('seo.update');
+    Route::get('seo/delete/{seo}',[SeoController::class,'delete'])->name('seo.delete');
+    Route::get('seo/duplicate/{seo}',[SeoController::class,'duplicate'])->name('seo.duplicate');
 });
 
 

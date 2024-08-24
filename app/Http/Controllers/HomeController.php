@@ -7,6 +7,7 @@ use App\Models\Banner;
 use App\Models\Blog;
 use App\Models\Course;
 use App\Models\Plan;
+use App\Models\Seo;
 use App\Models\Service;
 use App\Models\Team;
 use App\Models\Testimonial;
@@ -23,14 +24,16 @@ class HomeController extends Controller
         $testimonials=Testimonial::all();
         $blogs=Blog::all();
         $course=Course::all();
-        return view('frontend.index',compact('banners','abouts','services','teams','testimonials','blogs','course'));
+        $seos = Seo::where('page', 'index')->get();
+        return view('frontend.index',compact('banners','abouts','services','teams','testimonials','blogs','course','seos'));
     }
 
     public function about()
     {
         $abouts=About::all();
         $testimonials=Testimonial::all();
-        return view('frontend.about',compact('testimonials','abouts'));
+        $seos = Seo::where('page', 'about')->get();
+        return view('frontend.about',compact('testimonials','abouts','seos'));
     }
 
     public function blog()
@@ -38,8 +41,8 @@ class HomeController extends Controller
         $blogs = Blog::all();
 //        $categories = Category::withCount('posts')->get(); // Assuming 'Category' model and 'posts' relationship
         $recentPosts = Blog::orderBy('created_at', 'desc')->take(5)->get(); // Fetch the 5 most recent posts
-
-        return view('frontend.blog', compact('blogs', 'recentPosts'));
+        $seos = Seo::where('page', 'blog')->get();
+        return view('frontend.blog', compact('blogs', 'recentPosts','seos'));
     }
     public function search(Request $request)
     {
@@ -49,38 +52,44 @@ class HomeController extends Controller
             ->get();
 
 //        $categories = Category::withCount('posts')->get();
+        $seos = Seo::where('page', 'blog')->get();
         $recentPosts = Blog::orderBy('created_at', 'desc')->take(5)->get();
 
-        return view('frontend.blog', compact('blogs', 'recentPosts'));
+        return view('frontend.blog', compact('blogs', 'recentPosts','seos'));
     }
 
 
     public function contact()
     {
-        return view('frontend.contact');
+        $seos = Seo::where('page', 'contact')->get();
+        return view('frontend.contact',compact('seos'));
     }
 
     public function course()
     {
         $services=Service::all();
-        return view('frontend.course',compact('services'));
+        $seos = Seo::where('page', 'course')->get();
+        return view('frontend.course',compact('services','seos'));
     }
 
     public function single(Blog $blog)
     {
         $blogs=Blog::all();
-
-        return view('frontend.single',compact('blog','blogs'));
+        $seos = Seo::where('page', 'blog')->get();
+        return view('frontend.single',compact('blog','blogs','seos'));
     }
 
     public function teacher()
     {
         $teams =Team::all() ;
-        return view('frontend.teacher',compact('teams'));
+        $seos = Seo::where('page', 'teacher')->get();
+        return view('frontend.teacher',compact('teams','seos'));
     }
 
     public function coursesdetails()
     {
-        return view('frontend.courses-details');
+        $seos = Seo::where('page', 'course')->get();
+//        $seos= Seo::where('service_id', $service->id)->get();
+        return view('frontend.courses-details',compact('seos'));
     }
 }
