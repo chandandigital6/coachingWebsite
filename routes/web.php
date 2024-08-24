@@ -5,6 +5,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\BannerController;
 
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\PlanCOntroller;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TeamController;
@@ -149,15 +150,15 @@ Route::group(['middleware' => ['auth']],function (){
     Route::get('blogs/duplicate/{blog}',[\App\Http\Controllers\BlogController::class,'duplicate'])->name('blogs.duplicate');
 
 //    //counter
-//
-//    Route::get('counter/index',[CounterController::class,'index'])->name('counter.index');
-//    Route::get('counter/create',[CounterController::class,'create'])->name('counter.create');
-//    Route::post('counter/store',[CounterController::class,'store'])->name('counter.store');
-//    Route::get('counter/edit/{counter}',[CounterController::class,'edit'])->name('counter.edit');
-//    Route::post('counter/update/{counter}',[CounterController::class,'update'])->name('counter.update');
-//    Route::get('counter/delete/{counter}',[CounterController::class,'delete'])->name('counter.delete');
-//    Route::get('counter/duplicate/{counter}',[CounterController::class,'duplicate'])->name('counter.duplicate');
-//
+
+    Route::get('course/index',[CourseController::class,'index'])->name('course.index');
+    Route::get('course/create',[CourseController::class,'create'])->name('course.create');
+    Route::post('course/store',[CourseController::class,'store'])->name('course.store');
+    Route::get('course/edit/{course}',[CourseController::class,'edit'])->name('course.edit');
+    Route::post('course/update/{course}',[CourseController::class,'update'])->name('course.update');
+    Route::get('course/delete/{course}',[CourseController::class,'delete'])->name('course.delete');
+    Route::get('course/duplicate/{course}',[CourseController::class,'duplicate'])->name('course.duplicate');
+
 
 });
 

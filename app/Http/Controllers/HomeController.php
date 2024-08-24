@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\About;
 use App\Models\Banner;
 use App\Models\Blog;
+use App\Models\Course;
 use App\Models\Plan;
 use App\Models\Service;
 use App\Models\Team;
@@ -21,7 +22,8 @@ class HomeController extends Controller
         $teams =Team::all() ;
         $testimonials=Testimonial::all();
         $blogs=Blog::all();
-        return view('frontend.index',compact('banners','abouts','services','teams','testimonials','blogs'));
+        $course=Course::all();
+        return view('frontend.index',compact('banners','abouts','services','teams','testimonials','blogs','course'));
     }
 
     public function about()

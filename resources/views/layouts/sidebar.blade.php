@@ -64,16 +64,16 @@
                      <a href="{{route('service.index')}}" class="nav-link">
                         <i class="nav-icon 	fa fa-bullseye"></i>
                         <p>
-                            Our Services
+                            Course Category
                         </p>
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a href="{{route('plan.index')}}" class="nav-link">
+                    <a href="{{route('course.index')}}" class="nav-link">
                         <i class="nav-icon 	fa fa-anchor"></i>
                         <p>
-                            Services Plans
+                          Our Course
                         </p>
                     </a>
                 </li>

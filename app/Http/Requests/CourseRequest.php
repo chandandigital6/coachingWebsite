@@ -11,7 +11,7 @@ class CourseRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,14 @@ class CourseRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'title' => 'required|string|max:255',
+            'sort_description' => 'nullable|string|max:500',
+            'number_of_student' => 'nullable|integer|min:0',
+            'duration' => 'nullable|string',
+            'msg' => 'nullable|string',
+            'rating' => 'nullable',
+            'price' => 'nullable|numeric|min:0',
         ];
     }
 }
