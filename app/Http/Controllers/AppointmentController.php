@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\AppointmentRequest;
+use App\Mail\AdminAppointmentNotification;
 use App\Mail\AppointmentCreated;
 use App\Models\Appointment;
 use Illuminate\Http\Request;
@@ -31,6 +32,9 @@ class AppointmentController extends Controller
         $appointment=Appointment::create($request->all());
         if($appointment){
             Mail::to($request->email)->send(new AppointmentCreated($appointment));
+            $adminEmail = 'chandan84yadav@gmail.com';
+
+            Mail::to($adminEmail)->send(new AdminAppointmentNotification($appointment));
         }
         return redirect()->back()->with('success', 'Appointment  created successfully.');
     }

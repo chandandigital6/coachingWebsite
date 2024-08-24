@@ -87,29 +87,32 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form>
+                <form action="{{route('appointment.store')}}" method="post">
+                    @csrf
                     <div class="form-group">
                         <label for="name" class="font-weight-bold">Full Name</label>
-                        <input type="text" class="form-control rounded-pill border-primary" id="name"
+                        <input type="text" class="form-control rounded-pill border-primary" name="name" id="name"
                             placeholder="Enter your name" required>
                     </div>
                     <div class="form-group">
                         <label for="email" class="font-weight-bold">Email Address</label>
-                        <input type="email" class="form-control rounded-pill border-primary" id="email"
+                        <input type="email" class="form-control rounded-pill border-primary" name="email" id="email"
                             placeholder="Enter your email" required>
                     </div>
                     <div class="form-group">
                         <label for="phone" class="font-weight-bold">Phone Number</label>
-                        <input type="tel" class="form-control rounded-pill border-primary" id="phone"
+                        <input type="tel" class="form-control rounded-pill border-primary" name="number" id="phone"
                             placeholder="Enter your phone number" required>
                     </div>
                     <div class="form-group">
                         <label for="course" class="font-weight-bold">Select Course</label>
-                        <select class="form-control rounded-pill border-primary" id="course" required>
+                        <select class="form-control rounded-pill border-primary" name="course" id="course" required>
                             <option value="" disabled selected>Select Course</option>
-                            <option value="course1">PHP</option>
-                            <option value="course2">WEB DESIGNING</option>
-                            <option value="course3">FULL STACK</option>
+                            <option value="php">PHP</option>
+                            <option value="web designing">WEB DESIGNING</option>
+                            <option value="full stack">FULL STACK</option>
+                            <option value="digital marketing"> Digital Marketing</option>
+                            <option value="graphics Designing"> Graphics Designing</option>
                         </select>
                     </div>
                     <button type="submit" class="btn btn-primary rounded-pill btn-block py-2">Submit</button>
