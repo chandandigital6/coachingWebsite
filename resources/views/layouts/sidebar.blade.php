@@ -111,7 +111,14 @@
                     </a>
                 </li>
 
-
+                <li class="nav-item">
+                    <a href="{{route('auth.change-password-form')}}" class="nav-link">
+                        <i class="nav-icon fa fa-cog"></i>
+                        <p>
+                            PasswordChange
+                        </p>
+                    </a>
+                </li>
 
 
 

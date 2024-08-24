@@ -102,4 +102,5 @@ class HomeController extends Controller
         return view('frontend.thankyou',compact('seos'));
     }
 
+
 }

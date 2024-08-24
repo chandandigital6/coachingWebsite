@@ -52,6 +52,8 @@ Route::post('store-password',[AuthController::class,'store_password'])->name('st
 
 Route::post('appointment/store',[AppointmentController::class,'store'])->name('appointment.store');
 
+Route::get('/change-password', [AuthController::class, 'showChangePasswordForm'])->name('auth.change-password-form');
+Route::post('/update-password', [AuthController::class, 'updatePassword'])->name('auth.update-password');
 
 Route::get('dashboard', [AuthController::class, 'dashboard'])
     ->middleware(['auth'])
@@ -170,7 +172,7 @@ Route::group(['middleware' => ['auth']],function (){
     Route::get('seo/duplicate/{seo}',[SeoController::class,'duplicate'])->name('seo.duplicate');
 });
 
-    
+
 
 
 
