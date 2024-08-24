@@ -1,4 +1,4 @@
-@extends('components.main')
+@extends('components.main',['seos' => $seos])
 @section('content')
     <!-- Header Start -->
     <div class="container-fluid page-header" style="margin-bottom: 90px;" data-aos="fade-down">

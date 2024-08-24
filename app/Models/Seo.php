@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Course extends Model
+class Seo extends Model
 {
     use HasFactory;
-    protected $guarded = ['id'];
+    protected $guarded=['id'];
 
-    public function seo()
+    public function course()
     {
-        return $this->hasMany(Seo::class);
+        return $this->belongsTo(Course::class);
     }
 }

@@ -1,4 +1,4 @@
-@extends('components.main')
+@extends('components.main',['seos' => $seos])
 @section('content')
     <!-- Carousel Start -->
     <div class="container-fluid p-0 pb-5 mb-5">

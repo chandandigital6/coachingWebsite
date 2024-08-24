@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="utf-8">
-    <title></title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <!-- Favicon -->
@@ -24,6 +23,65 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="{{ asset('asset/css/style.css') }}" rel="stylesheet">
+
+    @php
+        $seo = $seos->first();
+    @endphp
+
+    @if ($seo && $seo->title)
+        <title>{{ $seo->title }}</title>
+    @endif
+
+    @if ($seo && $seo->description)
+        <meta name="description" content="{{ $seo->description }}">
+    @endif
+
+    {{--    @if ($seo && $seo->canonical) --}}
+    {{--        <link rel="canonical" href="{{ $seo->canonical }}"> --}}
+    {{--    @endif --}}
+
+    <!-- Open Graph data -->
+    @if ($seo && $seo->og_title)
+        <meta property="og:title" content="{{ $seo->og_title }}">
+    @endif
+
+    @if ($seo && $seo->og_description)
+        <meta property="og:description" content="{{ $seo->og_description }}">
+    @endif
+
+    @if ($seo && $seo->og_type)
+        <meta property="og:type" content="{{ $seo->og_type }}">
+    @endif
+
+    @if ($seo && $seo->og_url)
+        <meta property="og:url" content="{{ $seo->og_url }}">
+    @endif
+
+    @if ($seo && $seo->og_image)
+        <meta property="og:image" content="{{ $seo->og_image }}">
+    @endif
+
+    @if ($seo && $seo->og_site_name)
+        <meta property="og:site_name" content="{{ $seo->og_site_name }}">
+    @endif
+
+    @if ($seo && $seo->og_locale)
+        <meta property="og:locale" content="{{ $seo->og_locale }}">
+    @endif
+
+    <!-- Twitter data -->
+    @if ($seo && $seo->og_title)
+        <meta name="twitter:title" content="{{ $seo->og_title }}">
+    @endif
+
+    @if ($seo && $seo->og_description)
+        <meta name="twitter:description" content="{{ $seo->og_description }}">
+    @endif
+
+    @if ($seo && $seo->og_image)
+        <meta name="twitter:image" content="{{ $seo->og_image }}">
+    @endif
+
 </head>
 
 <body>
