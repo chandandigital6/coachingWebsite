@@ -238,8 +238,8 @@
     <div class="container-fluid" data-aos="fade-up">
         <div class="container pt-5 pb-3">
             <div class="text-center mb-5" data-aos="fade-down">
-                <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Teachers</h5>
-                <h1>Meet Our Teachers</h1>
+                <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Trainers</h5>
+                <h1>Meet Our Trainers</h1>
             </div>
             <div class="row">
                 @foreach ($teams as $team)

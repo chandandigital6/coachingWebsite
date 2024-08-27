@@ -65,7 +65,7 @@
                         <a href="{{ route('course') }}"
                             class="nav-item nav-link {{ Request::is('course') ? 'active' : '' }}">Courses</a>
                         <a href="{{ route('teacher') }}"
-                            class="nav-item nav-link {{ Request::is('teacher') ? 'active' : '' }}">Teachers</a>
+                            class="nav-item nav-link {{ Request::is('teacher') ? 'active' : '' }}">Trainers</a>
                         <a href="{{ route('blog') }}"
                             class="nav-item nav-link {{ Request::is('blog') ? 'active' : '' }}">Blog </a>
 
