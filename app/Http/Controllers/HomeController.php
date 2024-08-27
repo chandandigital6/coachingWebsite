@@ -84,7 +84,7 @@ class HomeController extends Controller
     {
         $teams =Team::all() ;
         $seos = Seo::where('page', 'teacher')->get();
-        return view('frontend.teacher',compact('teams','seos'));
+        return view('frontend.t eacher',compact('teams','seos'));
     }
 
     public function coursesdetails(Course $courses)
