@@ -297,7 +297,7 @@
             </div>
             <!-- View All Blogs Button -->
             <div class="text-center mt-4">
-                <a href="{{ route('blogDetails-blog', $blog->id) }}" class="btn btn-primary px-4 py-2">View All Blogs</a>
+                <a href="{{ route('blog') }}" class="btn btn-primary px-4 py-2">View All Blogs</a>
             </div>
         </div>
     </div>
