@@ -37,8 +37,9 @@
         </div>
         <div class="col-lg-5 col-md-12 mb-5">
             <h5 class="text-primary text-uppercase mb-4" style="letter-spacing: 5px;">Newsletter</h5>
-            <p>Rebum labore lorem dolores kasd est, et ipsum amet et at kasd, ipsum sea tempor magna tempor. Accu
-                kasd sed ea duo ipsum. Dolor duo eirmod sea justo no lorem est diam</p>
+            <p>
+                Stay updated with our latest insights, industry news, and expert tips! Subscribe to our newsletter for exclusive content delivered straight to your inbox. Don't miss out—join now!
+            </p>
             <div class="w-100">
                 <div class="input-group">
                     <input type="text" class="form-control border-light" style="padding: 30px;"
