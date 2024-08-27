@@ -96,7 +96,7 @@
                 <h1>Our Popular Courses</h1>
             </div>
             <div class="row">
-                @foreach ($course as $courses)
+                @foreach ($course->take(3) as $courses)
                     <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
                         <div class="rounded overflow-hidden mb-2">
                             <a href="{{ route('courseDetails-courses', $courses->id) }}">
@@ -174,18 +174,21 @@
                 <div class="col-lg-7 mb-5 mb-lg-0" data-aos="fade-right">
                     <div class="mb-4">
                         <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 3px;">Need Any Courses?</h5>
-                        <h1 class="text-white display-4">Get 30% Off for New Students</h1>
+                        <h1 class="text-white display-4">Get 20% Off for New Students</h1>
                     </div>
-                    <p class="text-light">Invidunt lorem justo sanctus clita. Erat lorem labore ea, justo dolor lorem ipsum
-                        ut sed eos, ipsum et dolor kasd sit ea justo. Erat justo sed sed diam. Ea et erat ut sed diam sea
-                        ipsum est dolor.</p>
+                    <p class="text-light">
+                        Take advantage of our special offer! New students can get a 20% discount on any
+                        course. Elevate your skills in digital marketing,
+                        web development, or design with expert-led training tailored to your success.
+                    </p>
                     <ul class="list-unstyled text-light">
-                        <li class="py-2"><i class="fa fa-check-circle text-primary mr-3"></i>Labore eos amet dolor amet
-                            diam</li>
-                        <li class="py-2"><i class="fa fa-check-circle text-primary mr-3"></i>Etsea et sit dolor amet
-                            ipsum</li>
-                        <li class="py-2"><i class="fa fa-check-circle text-primary mr-3"></i>Diam dolor diam elitr ipsum
-                            vero</li>
+                        <li class="py-2"><i class="fa fa-check-circle text-primary mr-3"></i>20% off for new students: Enroll now and save on all courses.</li>
+                        <li class="py-2"><i class="fa fa-check-circle text-primary mr-3"></i>
+                            Expert-led training: Learn from industry professionals
+                        </li>
+                        <li class="py-2"><i class="fa fa-check-circle text-primary mr-3"></i>
+                            Flexible schedules: Study at your own pace.
+                        </li>
                     </ul>
                 </div>
                 <div class="col-lg-5" data-aos="fade-left">
@@ -242,7 +245,7 @@
                 <h1>Meet Our Trainers</h1>
             </div>
             <div class="row">
-                @foreach ($teams as $team)
+                @foreach ($teams->take(3) as $team)
                     <div class="col-md-6 col-lg-3 text-center team mb-4" data-aos="fade-up"
                         data-aos-delay="{{ $loop->index * 100 }}">
 
@@ -256,7 +259,7 @@
                                     <a class="btn btn-outline-light btn-square mx-1" href="{{ $team->fb_url }}"><i
                                             class="fab fa-facebook-f"></i></a>
                                     <a class="btn btn-outline-light btn-square mx-1" href="{{ $team->wat_url }}"><i
-                                            class="fab fa-whatsapp"></i></a>
+                                            class="fab fa-linkedin"></i></a>
                                 </div>
                             </div>
                             <div class="bg-secondary p-4">
@@ -281,7 +284,7 @@
                 <h1>Latest From Our Blog</h1>
             </div>
             <div class="row pb-3">
-                @foreach ($blogs as $blog)
+                @foreach ($blogs->take(3) as $blog)
                     <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
                         <div class="blog-item position-relative overflow-hidden rounded mb-2">
                             <img class="img-fluid" src="{{ asset('storage/' . $blog->image) }}" alt="">

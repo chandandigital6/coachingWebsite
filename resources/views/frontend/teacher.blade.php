@@ -36,7 +36,7 @@
                                     <a class="btn btn-outline-light btn-square mx-1" href="{{$team->fb_url}}"><i
                                             class="fab fa-facebook-f"></i></a>
                                     <a class="btn btn-outline-light btn-square mx-1" href="{{$team->wat_url}}"><i
-                                            class="fab fa-whatsapp"></i></a>
+                                            class="fab fa-linkedin"></i></a>
                                 </div>
                             </div>
                             <div class="bg-secondary p-4">
