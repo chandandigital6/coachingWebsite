@@ -5,9 +5,10 @@
             <div class="row">
                 <div class="col-md-6 mb-5">
                     <h5 class="text-primary text-uppercase mb-4" style="letter-spacing: 5px;">Get In Touch</h5>
-                    <p><i class="fa fa-map-marker-alt mr-2"></i>123 Street, New York, USA</p>
-                    <p><i class="fa fa-phone-alt mr-2"></i>+012 345 67890</p>
-                    <p><i class="fa fa-envelope mr-2"></i>info@example.com</p>
+                    <p><i class="fa fa-map-marker-alt mr-2"></i>     73 Basement, Ekta Enclave Society, Lakhanpur, Khyora, Kanpur, Uttar Pradesh 208024</p>
+                    <p><i class="fa fa-phone-alt mr-2"></i> <a href="tel:+917753800444">+917753800444</a></p>
+                    <p><i class="fa fa-phone-alt mr-2"></i> <a href="tel:+918423269465">+918423269465</a></p>
+                    <p><i class="fa fa-envelope mr-2"></i>realvictorygroups@gmail.com</p>
                     <div class="d-flex justify-content-start mt-4">
                         <a class="btn btn-outline-light btn-square mr-2" href="#"><i
                                 class="fab fa-twitter"></i></a>

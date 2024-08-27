@@ -3,7 +3,8 @@
     <div class="row align-items-center py-4 px-xl-5">
         <div class="col-lg-3">
             <a href="" class="text-decoration-none">
-                <h1 class="m-0"><span class="text-primary">Real </span>Victory</h1>
+                <img src="{{asset('asset/img/RVG LOGO..png')}}" alt="" width="300">
+{{--                <h1 class="m-0"><span class="text-primary">Real </span>Victory</h1>--}}
             </a>
         </div>
         <div class="col-lg-3 text-right">
@@ -11,7 +12,9 @@
                 <i class="fa fa-2x fa-map-marker-alt text-primary mr-3"></i>
                 <div class="text-left">
                     <h6 class="font-weight-semi-bold mb-1">Our Office</h6>
-                    <small>123 Street, New York, USA</small>
+                    <small>
+                        73 Basement, Ekta Enclave Society, Lakhanpur, Khyora, Kanpur, Uttar Pradesh 208024
+                    </small>
                 </div>
             </div>
         </div>
@@ -20,7 +23,7 @@
                 <i class="fa fa-2x fa-envelope text-primary mr-3"></i>
                 <div class="text-left">
                     <h6 class="font-weight-semi-bold mb-1">Email Us</h6>
-                    <small>info@example.com</small>
+                    <small>realvictorygroups@gmail.com</small>
                 </div>
             </div>
         </div>
@@ -29,7 +32,8 @@
                 <i class="fa fa-2x fa-phone text-primary mr-3"></i>
                 <div class="text-left">
                     <h6 class="font-weight-semi-bold mb-1">Call Us</h6>
-                    <small>+012 345 6789</small>
+                    <small><a href="tel: +917753800444"> +917753800444</a></small> <br>
+                    <small><a href="tel: +918423269465"> +918423269465</a></small>
                 </div>
             </div>
         </div>
@@ -46,7 +50,8 @@
         <div class="col-lg-9">
             <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
                 <a href="" class="text-decoration-none d-block d-lg-none">
-                    <h1 class="m-0"><span class="text-primary">Real</span>Victory</h1>
+                    <img src="{{asset('asset/img/RVG LOGO..png')}}" alt="" width="250">
+{{--                    <h1 class="m-0"><span class="text-primary">Real</span>Victory</h1>--}}
                 </a>
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
