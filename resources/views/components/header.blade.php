@@ -3,8 +3,8 @@
     <div class="row align-items-center py-4 px-xl-5">
         <div class="col-lg-3">
             <a href="" class="text-decoration-none">
-                <img src="{{asset('asset/img/RVG LOGO..png')}}" alt="" width="300">
-{{--                <h1 class="m-0"><span class="text-primary">Real </span>Victory</h1>--}}
+                <img src="{{ asset('asset/img/RVG LOGO..png') }}" alt="" width="300">
+                {{--                <h1 class="m-0"><span class="text-primary">Real </span>Victory</h1> --}}
             </a>
         </div>
         <div class="col-lg-3 text-right">
@@ -50,8 +50,8 @@
         <div class="col-lg-9">
             <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
                 <a href="" class="text-decoration-none d-block d-lg-none">
-                    <img src="{{asset('asset/img/RVG LOGO..png')}}" alt="" width="250">
-{{--                    <h1 class="m-0"><span class="text-primary">Real</span>Victory</h1>--}}
+                    <img src="{{ asset('asset/img/RVG LOGO..png') }}" alt="" width="250">
+                    {{--                    <h1 class="m-0"><span class="text-primary">Real</span>Victory</h1> --}}
                 </a>
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
