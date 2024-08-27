@@ -10,13 +10,13 @@
                     <p><i class="fa fa-phone-alt mr-2"></i> <a href="tel:+918423269465">+918423269465</a></p>
                     <p><i class="fa fa-envelope mr-2"></i>realvictorygroups@gmail.com</p>
                     <div class="d-flex justify-content-start mt-4">
-                        <a class="btn btn-outline-light btn-square mr-2" href="#"><i
-                                class="fab fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-square mr-2" href="#"><i
+                        <a class="btn btn-outline-light btn-square mr-2" href="https://wa.me/+918423269465"><i
+                                class="fab fa-whatsapp"></i></a>
+                        <a class="btn btn-outline-light btn-square mr-2" href="https://www.facebook.com/realvictorygroups"><i
                                 class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-square mr-2" href="#"><i
+                        <a class="btn btn-outline-light btn-square mr-2" href="https://www.linkedin.com/company/realvictorygroups/"><i
                                 class="fab fa-linkedin-in"></i></a>
-                        <a class="btn btn-outline-light btn-square" href="#"><i
+                        <a class="btn btn-outline-light btn-square" href="https://www.instagram.com/realvictorygroups/"><i
                                 class="fab fa-instagram"></i></a>
                     </div>
                 </div>
@@ -55,8 +55,8 @@
     style="border-color: rgba(256, 256, 256, .1) !important;">
     <div class="row">
         <div class="col-lg-6 text-center text-md-left mb-3 mb-md-0">
-            <p class="m-0 text-white">&copy; <a href="#">Domain Name</a>. All Rights Reserved. Designed by <a
-                    href="#">Real Victory Groups</a>
+            <p class="m-0 text-white">&copy; <a href="{{route('home')}}">RVG</a>. All Rights Reserved. Designed by <a
+                    href="https://realvictorygroups.com/">Real Victory Groups</a>
             </p>
         </div>
         <div class="col-lg-6 text-center text-md-right">
