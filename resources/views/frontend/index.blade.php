@@ -245,7 +245,7 @@
                 <h1>Meet Our Trainers</h1>
             </div>
             <div class="row">
-                @foreach ($teams->take(3) as $team)
+                @foreach ($teams->take(4) as $team)
                     <div class="col-md-6 col-lg-3 text-center team mb-4" data-aos="fade-up"
                         data-aos-delay="{{ $loop->index * 100 }}">
 
