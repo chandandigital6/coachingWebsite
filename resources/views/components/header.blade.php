@@ -3,7 +3,7 @@
     <div class="row align-items-center py-4 px-xl-5">
         <div class="col-lg-3">
             <a href="" class="text-decoration-none">
-                <img src="{{ asset('asset/img/RVG LOGO..png') }}" alt="" width="300">
+                <img src="{{ asset('asset/img/RVG LOGO..png') }}" alt="" width="250">
                 {{--                <h1 class="m-0"><span class="text-primary">Real </span>Victory</h1> --}}
             </a>
         </div>
