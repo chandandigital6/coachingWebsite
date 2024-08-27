@@ -2666,8 +2666,8 @@ fieldset:disabled a.btn {
 }
 
 .btn-outline-primary {
-  color: #FF6600;
-  border-color: #FF6600;
+  color: #ec041c;
+  border-color: #ec041c;
 }
 
 .btn-outline-primary:hover {
@@ -6483,7 +6483,7 @@ button.bg-dark:focus {
 }
 
 .border-primary {
-  border-color: #FF6600 !important;
+  border-color: #ec041c !important;
 }
 
 .border-secondary {
@@ -9817,7 +9817,7 @@ h6,
 }
 
 .carousel-indicators .active {
-  background: #FF6600;
+  background: #ec041c;
 }
 
 @media (max-width: 991.98px) {
@@ -9910,7 +9910,7 @@ h6,
   width: 15px;
   height: 15px;
   border-radius: 15px;
-  background: #FF6600;
+  background: #ec041c;
 }
 
 .testimonial-carousel .owl-dot::after {
@@ -9920,7 +9920,7 @@ h6,
   right: -5px;
   bottom: -5px;
   left: -5px;
-  border: 2px solid #FF6600;
+  border: 2px solid #ec041c;
   border-radius: 20px;
 }
 
