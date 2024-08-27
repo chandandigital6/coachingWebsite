@@ -2,7 +2,7 @@
 
 @section('content')
     <!-- Carousel Start -->
-    <div class="container-fluid p-0 pb-5 mb-5">
+    <div class="container-fluid p-0 pb-5">
         <div id="header-carousel" class="carousel slide carousel-fade" data-ride="carousel" data-aos="fade-up">
             <ol class="carousel-indicators" data-aos="fade-down">
                 @foreach ($banners as $key => $banner)
@@ -58,8 +58,8 @@
     <!-- About End -->
 
     <!-- Category Start -->
-    <div class="container-fluid py-5">
-        <div class="container pt-5 pb-3">
+    <div class="container-fluid">
+        <div class="container">
             <div class="text-center mb-5" data-aos="fade-up">
                 <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Subjects</h5>
                 <h1>Explore Top Subjects</h1>
@@ -82,8 +82,8 @@
     <!-- Category End -->
 
     <!-- Courses Start -->
-    <div class="container-fluid py-5">
-        <div class="container py-5">
+    <div class="container-fluid">
+        <div class="container">
             <div class="text-center mb-5" data-aos="fade-up">
                 <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Courses</h5>
                 <h1>Our Popular Courses</h1>
@@ -115,8 +115,8 @@
     <!-- Courses End -->
 
     <!-- Testimonial Start -->
-    <div class="container-fluid py-5" data-aos="fade-up">
-        <div class="container py-5">
+    <div class="container-fluid" data-aos="fade-up">
+        <div class="container">
             <div class="text-center mb-5" data-aos="fade-down">
                 <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Testimonial</h5>
                 <h1>What Say Our Students</h1>
@@ -149,7 +149,7 @@
     <!-- Testimonial End -->
 
      <!-- Registration Start -->
-     <div class="container-fluid bg-registration py-5" style="margin: 90px 0;" data-aos="fade-up">
+     <div class="container-fluid bg-registration" style="margin: 90px 0;" data-aos="fade-up">
         <div class="container py-5">
             <div class="row align-items-center">
                 <div class="col-lg-7 mb-5 mb-lg-0" data-aos="fade-right">
@@ -216,7 +216,7 @@
     <!-- Registration End -->
 
     <!-- Team Start -->
-    <div class="container-fluid py-5" data-aos="fade-up">
+    <div class="container-fluid" data-aos="fade-up">
         <div class="container pt-5 pb-3">
             <div class="text-center mb-5" data-aos="fade-down">
                 <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Teachers</h5>
@@ -254,7 +254,7 @@
 
 
     <!-- Blog Start -->
-    <div class="container-fluid py-5" data-aos="fade-up">
+    <div class="container-fluid" data-aos="fade-up">
         <div class="container pt-5 pb-3">
             <div class="text-center mb-5" data-aos="fade-down">
                 <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Our Blog</h5>
