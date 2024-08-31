@@ -67,8 +67,8 @@
     <div class="container-fluid">
         <div class="container py-5">
             <div class="text-center mb-5" data-aos="fade-up">
-                <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Subjects</h5>
-                <h1>Explore Top Subjects</h1>
+                <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Benefits</h5>
+                <h1>Explore Top Benefits</h1>
             </div>
             <div class="row">
                 @foreach ($services as $service)
