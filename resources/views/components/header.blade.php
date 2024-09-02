@@ -74,6 +74,7 @@
                         {{--                            <div class="dropdown-menu rounded-0 m-0"> --}}
                         {{--                            </div> --}}
                         {{--                        </div> --}}
+                        <a href="{{ route('career') }}" class="nav-item nav-link">Careers</a>
                         <a href="{{ route('contact') }}"
                             class="nav-item nav-link {{ Request::is('contact') ? 'active' : '' }}">Contact</a>
                     </div>
