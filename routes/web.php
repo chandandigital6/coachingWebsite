@@ -14,6 +14,7 @@ use App\Http\Controllers\TestimonialController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\JobController;
 
 /*
 |--------------------------------------------------------------------------
@@ -170,6 +171,18 @@ Route::group(['middleware' => ['auth']],function (){
     Route::post('seo/update/{seo}',[SeoController::class,'update'])->name('seo.update');
     Route::get('seo/delete/{seo}',[SeoController::class,'delete'])->name('seo.delete');
     Route::get('seo/duplicate/{seo}',[SeoController::class,'duplicate'])->name('seo.duplicate');
+
+
+
+  Route::get('job/index',[JobController::class,'index'])->name('job.index');
+    Route::get('job/create',[JobController::class,'create'])->name('job.create');
+    Route::post('job/store',[JobController::class,'store'])->name('job.store');
+    Route::get('job/edit/{job}',[JobController::class,'edit'])->name('job.edit');
+    Route::post('job/update/{job}',[JobController::class,'update'])->name('job.update');
+    Route::get('job/delete/{job}',[JobController::class,'delete'])->name('job.delete');
+    Route::get('job/duplicate/{job}',[JobController::class,'duplicate'])->name('job.duplicate');
+
+
 });
 
 

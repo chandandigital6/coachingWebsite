@@ -125,7 +125,7 @@
             </div>
             <!-- View All Button -->
             <div class="text-center mt-4">
-                <a href="{{ route('courseDetails-courses', $courses->id) }}" class="btn btn-primary px-4 py-2">View All
+                <a href="{{ route('course') }}" class="btn btn-primary px-4 py-2">View All
                     Courses</a>
             </div>
         </div>

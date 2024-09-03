@@ -95,6 +95,15 @@
                 </li>
 
                 <li class="nav-item">
+                    <a href="{{route('job.index')}}" class="nav-link">
+                       <i class="nav-icon fa fa-group"></i>
+                       <p>
+                       job
+                       </p>
+                   </a>
+               </li>
+
+                <li class="nav-item">
                      <a href="{{route('blogs.index')}}" class="nav-link">
                         <i class="nav-icon fa fa-asterisk"></i>
                         <p>

@@ -12,4 +12,6 @@ class Appointment extends Model
     protected $casts = [
         'date' => 'date',  // This will cast the 'date' attribute to a Carbon date instance
     ];
+
+    
 }
