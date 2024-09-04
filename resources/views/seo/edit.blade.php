@@ -60,7 +60,7 @@
                     </div>
                     <div class="form-group">
                         <label for="article_publisher">Article Publisher:</label>
-                        <input type="url" class="form-control" id="article_publisher" value="{{$seo->article_publisher}}" name="article_publisher" placeholder="https://www.facebook.com/viralbusinessin">
+                        <input type="url" class="form-control" id="article_publisher" value="{{$seo->article_publisher}}" name="article_publisher" placeholder="https://www.facebook.com/realvictory">
                     </div>
                     <div class="form-group">
                         <label for="og_image">OG Image:</label>
