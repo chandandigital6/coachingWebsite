@@ -33,6 +33,8 @@ Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('/course', [HomeController::class, 'course'])->name('course');
 Route::get('/blogDetails/{blog}', [HomeController::class, 'single'])->name('blogDetails-blog');
 Route::get('/search', [HomeController::class, 'search'])->name('searchBlogs');
+Route::get('/career', [HomeController::class, 'career'])->name('career');
+Route::get('/jobdetail', [HomeController::class, 'jobdetail'])->name('jobdetail');
 Route::get('/thankyou', [HomeController::class, 'thankyou'])->name('thankyou');
 
 //Route::get('',[HomeController::class,'blogDetails'])->name('blog-details');

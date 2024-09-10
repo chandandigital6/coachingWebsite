@@ -17,17 +17,18 @@
 
 
     <!-- Category Start -->
-    <div class="container-fluid py-5">
-        <div class="container pt-5 pb-3">
+    <div class="container-fluid">
+        <div class="container py-5">
             <div class="text-center mb-5" data-aos="fade-up">
-                <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Subjects</h5>
-                <h1>Explore Top Subjects</h1>
+                <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Benefits</h5>
+                <h1>Explore Top Benefits</h1>
             </div>
             <div class="row">
-                @foreach($services as $service)
+                @foreach ($services as $service)
                     <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="{{ $loop->index * 100 }}">
                         <div class="cat-item position-relative overflow-hidden rounded mb-2">
-                            <img class="img-fluid" src="{{ asset('storage/'.$service->image) }}" alt="{{ $service->title }}">
+                            <img class="img-fluid" src="{{ asset('storage/' . $service->image) }}"
+                                 alt="{{ $service->title }}">
                             <a class="cat-overlay text-white text-decoration-none" href="">
                                 <h4 class="text-white font-weight-medium">{{ $service->title }}</h4>
                                 <span>{{ $service->heading }}</span>
